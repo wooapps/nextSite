@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 
 @Component({
     selector: 'app-navbar',
@@ -10,14 +11,38 @@ export class NavbarComponent implements OnInit {
     private toggleButton: any;
     private sidebarVisible: boolean;
 
-    constructor(public location: Location, private element : ElementRef) {
+
+    constructor(public location: Location,
+                private element : ElementRef,
+                private _router: Router,
+                private route: ActivatedRoute) {
         this.sidebarVisible = false;
     }
 
     ngOnInit() {
         const navbar: HTMLElement = this.element.nativeElement;
         this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
+        this._router.events.subscribe(s => {
+            if (s instanceof NavigationEnd) {
+              const tree = this._router.parseUrl(this._router.url);
+              if (tree.fragment) {
+                const element = document.querySelector("#" + tree.fragment);
+                if (element) { element.scrollIntoView(true); }
+              }
+            }
+          });
     }
+    onAnchorClick ( ) {
+        this.route.fragment.subscribe ( f => {
+          const element = document.querySelector ( "#" + f )
+          if ( element ) element.scrollIntoView({block: "end", behavior: "smooth"})
+        });
+    }
+
+    goTo(location) {
+        this._router.navigate([location], { relativeTo: this.route });
+    }
+
     sidebarOpen() {
         const toggleButton = this.toggleButton;
         const html = document.getElementsByTagName('html')[0];
@@ -44,7 +69,7 @@ export class NavbarComponent implements OnInit {
             this.sidebarClose();
         }
     };
-  
+
     isDocumentation() {
         var titlee = this.location.prepareExternalUrl(this.location.path());
         if( titlee === '/documentation' ) {

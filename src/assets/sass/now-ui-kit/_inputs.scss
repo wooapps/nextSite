@@ -2,7 +2,7 @@
 
 .form-control {
     background-color: $transparent-bg;
-    border: 1px solid $light-gray;
+    border: 1px solid $black-color;
     border-radius: $btn-round-radius;
     color: $black-color;
     line-height: normal;
@@ -11,18 +11,18 @@
     @include box-shadow(none);
 
     .has-success &{
-        border-color: $light-gray;
+        border-color: $black-color;
     }
 
     &:focus{
-        border: 1px solid $primary-color;
+        border: 1px solid $black-color;
         @include box-shadow(none);
         outline: 0 !important;
         color: $black-color;
 
         & + .input-group-text,
         & ~ .input-group-text{
-            border: 1px solid $primary-color;
+            border: 1px solid $black-color;
             border-left: none;
             background-color: $transparent-bg;
         }
@@ -36,7 +36,7 @@
     }
 
     .has-success &:focus{
-        border-color: lighten($success-color, 5%);
+        border-color: lighten($success-color, 100%);
     }
 
 
@@ -207,20 +207,20 @@
     margin-right: 0;
 
     .input-group-text {
-      border-left: 1px solid #E3E3E3 !important;
+      border-left: 1px solid $black-color !important;
     }
   }
   .input-group-append .input-group-text {
-    border-right: 1px solid #E3E3E3 !important;
+    border-right: 1px solid $black-color !important;
     padding: 10px 18px 10px 0;
   }
 
   &.input-group-focus {
     .input-group-prepend .input-group-text {
-      border-left: 1px solid #f96332 !important;
+      border-left: 1px solid #ff0000 !important;
     }
     .input-group-append .input-group-text {
-      border-right: 1px solid #f96332 !important;
+      border-right: 1px solid #ff0000 !important;
     }
   }
   &.form-group-no-border{
@@ -290,4 +290,18 @@ textarea.form-control{
 }
 .form-group.has-error, .form-group.has-danger{
     margin-bottom: 20px;
+}
+
+input, textarea, select, button {
+    text-rendering: auto;
+    color: black;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 0em;
+    font: 1000 13.3333px Arial;
 }
