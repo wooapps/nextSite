@@ -9,14 +9,14 @@
           </a>
            <div ngbDropdownMenu>
              <a class="dropdown-header">Planos de contratação</a>
-             <a class="dropdown-item" href="#">Silver</a>
-             <a class="dropdown-item" href="#">Gold</a>
-             <a class="dropdown-item" href="#">Platinum</a>
-             <a class="dropdown-item" href="#">Parcerias</a>
+             <a class="dropdown-item" (click)="goTo('examples/planos')" href="#">Silver</a>
+             <a class="dropdown-item" (click)="goTo('examples/planos')" href="#">Gold</a>
+             <a class="dropdown-item" (click)="goTo('examples/planos')" href="#">Platinum</a>
+             <a class="dropdown-item" (click)="goTo('examples/planos')" href="#">Parcerias</a>
              <div class="dropdown-divider"></div>
-             <a class="dropdown-item" href="#">Acesse o sistema</a>
+             <a class="dropdown-item" href="htpp://nx-condo.herokuapp.com">Acesse o sistema</a>
              <div class="dropdown-divider"></div>
-             <a class="dropdown-item" href="#">Entre em contato</a>
+             <a class="dropdown-item" (click)="goTo('examples/contato')" href="#">Entre em contato</a>
            </div>
          </div>
       </div>
