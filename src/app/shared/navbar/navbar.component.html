@@ -9,14 +9,14 @@
           </a>
            <div ngbDropdownMenu>
              <a class="dropdown-header">Planos de contratação</a>
-             <a class="dropdown-item" (click)="goTo('examples/planos')" href="#">Silver</a>
-             <a class="dropdown-item" (click)="goTo('examples/planos')" href="#">Gold</a>
-             <a class="dropdown-item" (click)="goTo('examples/planos')" href="#">Platinum</a>
-             <a class="dropdown-item" (click)="goTo('examples/planos')" href="#">Parcerias</a>
+             <a class="dropdown-item" (click)="$event.preventDefault();goTo('page/planos')" href="#">Silver</a>
+             <a class="dropdown-item" (click)="$event.preventDefault();goTo('page/planos')" href="#">Gold</a>
+             <a class="dropdown-item" (click)="$event.preventDefault();goTo('page/planos')" href="#">Platinum</a>
+             <a class="dropdown-item" (click)="$event.preventDefault();goTo('page/planos')" href="#">Parcerias</a>
              <div class="dropdown-divider"></div>
              <a class="dropdown-item" href="htpp://nx-condo.herokuapp.com">Acesse o sistema</a>
              <div class="dropdown-divider"></div>
-             <a class="dropdown-item" (click)="goTo('examples/contato')" href="#">Entre em contato</a>
+             <a class="dropdown-item" (click)="$event.preventDefault();goTo('page/contato')" href="#">Entre em contato</a>
            </div>
          </div>
       </div>
@@ -34,7 +34,7 @@
         <div class="collapse navbar-collapse" data-nav-image="assets/img/blurred-image-1.jpg" data-color="orange">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                  <a class="nav-link" href="#" (click)="$event.preventDefault();goTo('examples/planos')" target="_blank">
+                  <a class="nav-link" href="#" (click)="$event.preventDefault();goTo('page/planos')" target="_blank">
                       <i class="now-ui-icons arrows-1_cloud-download-93"></i>
                       <p>Planos de contratação</p>
                   </a>

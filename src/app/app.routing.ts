@@ -3,23 +3,23 @@ import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ComponentsComponent } from './components/components.component';
-import { LandingComponent } from './examples/landing/landing.component';
-import { PlanosComponent } from './examples/planos/planos.component';
-import { LoginComponent } from './examples/login/login.component';
-import { ProfileComponent } from './examples/profile/profile.component';
-import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.component';
-import { ContatoComponent } from './examples/contato/contato.component';
+import { LandingComponent } from './page/landing/landing.component';
+import { PlanosComponent } from './page/planos/planos.component';
+import { LoginComponent } from './page/login/login.component';
+import { ProfileComponent } from './page/profile/profile.component';
+import { NucleoiconsComponent } from './page/nucleoicons/nucleoicons.component';
+import { ContatoComponent } from './page/contato/contato.component';
+import { PageComponent } from './page/page.component';
 
 const routes: Routes =[
     { path: '', redirectTo: 'index', pathMatch: 'full' },
-    { path: 'index',                component: ComponentsComponent },
-    { path: 'nucleoicons',          component: NucleoiconsComponent },
-    { path: 'examples/landing',     component: LandingComponent },
-    { path: 'examples/contato',     component: ContatoComponent },
-    { path: 'examples/planos',      component: PlanosComponent },
-    { path: 'examples/login',       component: LoginComponent },
-    { path: 'examples/profile',     component: ProfileComponent }
+    { path: 'index',                component: PageComponent },
+    { path: 'index/page/nucleoicons', component: NucleoiconsComponent },
+    { path: 'page/landing',     component: LandingComponent },
+    { path: 'page/contato',     component: ContatoComponent },
+    { path: 'page/planos',      component: PlanosComponent },
+    { path: 'page/login',       component: LoginComponent },
+    { path: 'page/profile',     component: ProfileComponent }
 ];
 
 @NgModule({
