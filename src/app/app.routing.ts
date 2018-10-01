@@ -17,6 +17,7 @@ const routes: Routes =[
     { path: 'index/page/nucleoicons', component: NucleoiconsComponent },
     { path: 'page/landing',     component: LandingComponent },
     { path: 'page/contato',     component: ContatoComponent },
+    { path: 'index/page/contato',     component: ContatoComponent },
     { path: 'page/planos',      component: PlanosComponent },
     { path: 'page/login',       component: LoginComponent },
     { path: 'page/profile',     component: ProfileComponent }
